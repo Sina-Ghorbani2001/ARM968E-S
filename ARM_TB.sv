@@ -24,7 +24,7 @@ module ARM_TB (
     initial begin
         #1 rst = 0;
         #5 rst = 1;
-        for (int i = 0 ; i < 50 ; i = i + 1 ) begin
+        for (int i = 0 ; i < 300 ; i = i + 1 ) begin
             @(posedge clk);
         end
         rst = 0;
