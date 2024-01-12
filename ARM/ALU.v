@@ -29,11 +29,11 @@ module ALU #(
             end  
             4'b0100: begin
                 {carry_out, ALU_Res} = Val1 - Val2;
-                V = ((ALU_Res[31] & ~Val1[31] & ~Val2[31]) | (~ALU_Res[31] & Val1[31] & Val2[31])) ? 1 : 0;
+                V = ((ALU_Res[31] & ~Val1[31] & Val2[31]) | (~ALU_Res[31] & Val1[31] & ~Val2[31])) ? 1 : 0;
             end 
             4'b0101: begin
                {carry_out, ALU_Res} = Val1 - Val2 - {31'b0, (~carry_in)}; 
-                V = ((ALU_Res[31] & ~Val1[31] & ~Val2[31]) | (~ALU_Res[31] & Val1[31] & Val2[31])) ? 1 : 0;
+                V = ((ALU_Res[31] & ~Val1[31] & Val2[31]) | (~ALU_Res[31] & Val1[31] & ~Val2[31])) ? 1 : 0;
             end
             4'b0110: {carry_out, ALU_Res} = Val1 & Val2;
             4'b0111: {carry_out, ALU_Res} = Val1 | Val2;
