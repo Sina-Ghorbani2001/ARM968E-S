@@ -29,7 +29,7 @@ module Condition_Check (
             4'b1000: check = C & (~Z);
             4'b1001: check = (~C) & Z;
             4'b1010: check = (N & V) | (~N & ~V);
-            4'b1011: check = (N != V) ? 1 : 0;
+            4'b1011: check = (N & ~V) | (~N & V);
             4'b1100: check = (Z == 0 && N == V) ? 1 : 0;
             4'b1101: check = (Z == 1 || N != V) ? 1 : 0;
             4'b1110: check = 1;
