@@ -14,7 +14,6 @@ module EX_Stage_Reg #(
 
 );
 
-
     always @(posedge clk or negedge rst) begin
         if(~rst) begin
             WB_EN <= 1'b0;
